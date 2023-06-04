@@ -1,0 +1,2 @@
+Sometimes when people copy paste the commands from tailwind, they forget the second one that initializes it
+So if your tailwind isn't working, try running this: npx tailwindcss init -p
