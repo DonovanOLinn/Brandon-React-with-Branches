@@ -1,8 +1,10 @@
+import Home from './pages/Home'
+
 function App() {
 
   return (
     <div>
-      this is my app
+      <Home />
     </div>
   )
 }
