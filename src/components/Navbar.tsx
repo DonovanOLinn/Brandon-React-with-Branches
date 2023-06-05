@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Button from './Button'
 
 function Navbar() {
 
@@ -7,6 +8,10 @@ function Navbar() {
 
     const dropDown = () => {
         setIsVisible(!isVisible)
+    }
+
+    const clicked = () => {
+        setIsVisible(false)
     }
 
 
@@ -24,12 +29,33 @@ function Navbar() {
             { isVisible ? (
             <div className='w-full block flex-grow items-center'>
                 <div className="text-sm lg:flex-grow">
-                    <button className='p-3 m-5 bg-teal-400 justify-center'>
+                    <Button className='p-3 m-5 bg-teal-400 justify-center'>
                         <div>
-                            <Link to='/' className='flex place-itmes-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'>Home</Link>
+                            <Link to='/' onClick={ clicked} className='flex place-itmes-center mt-4 lg:inline-block lg:mt-0
+                             text-teal-200 hover:text-white mr-4'>
+                                Home
+                            </Link>
                         </div>
 
-                    </button>
+                    </Button>
+                    <Button className='p-3 m-5 bg-teal-400 justify-center'>
+                        <div>
+                            <Link to='/about' onClick={ clicked} className='flex place-itmes-center mt-4 lg:inline-block lg:mt-0
+                             text-teal-200 hover:text-white mr-4'>
+                                About
+                            </Link>
+                        </div>
+
+                    </Button>
+                    <Button className='p-3 m-5 bg-teal-400 justify-center'>
+                        <div>
+                            <Link to='/dashboard' onClick={ clicked} className='flex place-itmes-center mt-4 lg:inline-block lg:mt-0
+                             text-teal-200 hover:text-white mr-4'>
+                                Dashboard
+                            </Link>
+                        </div>
+
+                    </Button>
                 </div>
             </div>
             ) : (
