@@ -1,0 +1,1 @@
+If your image is not working, check to see what I did in my images folder. You need to have that image type declaration.
