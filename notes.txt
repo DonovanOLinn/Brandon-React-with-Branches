@@ -1,0 +1,6 @@
+So, then hosting on Netlify (which you will do in the last video), the BrowserRouter doesn't like to work. So I would recommend switching to 
+HashRouter when it gets to that point. 
+Also, make sure that your react router dom is at least in version 6. If you are having any issues with it, then please uninstall your version
+and install the version that I have here. To do that, simply do:
+npm uninstall react-router-dom
+npm install react-router-dom@6.11.2
