@@ -1,0 +1,3 @@
+Most of the work that we did in this video revolves around the Modal and the DataTable. I have seen a few times in the past
+that when there are errors, people usually are using () instead of {} or vice versa. Additionally, make sure your open and setOpen
+are in the right spots
