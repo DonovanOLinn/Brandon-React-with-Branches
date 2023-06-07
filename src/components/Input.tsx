@@ -1,6 +1,12 @@
 import { TextField } from '@mui/material'
+import { forwardRef } from 'react'
 
-const Input = () => {
+interface InputType {
+    name: string,
+    placeholder: string
+}
+
+const Input = forwardRef(( props: InputType, ref) => {
   return (
     <TextField
         variant="outlined"
@@ -12,6 +18,6 @@ const Input = () => {
     >
     </TextField>
   )
-}
+})
 
 export default Input
