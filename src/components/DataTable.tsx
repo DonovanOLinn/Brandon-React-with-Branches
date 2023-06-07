@@ -19,6 +19,7 @@ function DataTable() {
     <>
         <Modal 
             open={open}
+            onClose={handleClose}
         />
         <div className="flex flex-row">
             <div>
@@ -29,7 +30,6 @@ function DataTable() {
                     Create New Contact
                 </button>
             </div> 
-            <button onClick={() => handleClose()}> close</button>
             <Button className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Update</Button>
             <Button className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Delete</Button>
         </div>
