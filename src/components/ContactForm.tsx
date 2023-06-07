@@ -1,8 +1,14 @@
-import React from 'react'
 
 const ContactForm = () => {
   return (
-    <div>ContactForm</div>
+    <div>
+      <form onSubmit={() => console.log('submitted')}>
+        <div>
+          <label htmlFor="name">Contact Name</label>
+          {/* Add input component here */}
+        </div>
+      </form>
+    </div>
   )
 }
 
