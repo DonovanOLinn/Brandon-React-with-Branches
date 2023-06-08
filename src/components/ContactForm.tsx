@@ -14,7 +14,7 @@ const ContactForm = ( props:ContactFormProps) => {
 
   const onSubmit = () => {
     console.log('pass')
-  }
+  } 
 
   return (
     <div>
