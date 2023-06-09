@@ -3,7 +3,10 @@ export const server_calls = {
         const response = await fetch(`https://phonebook-8by0.onrender.com/api/contacts`,
         {
             method: 'GET',
-            mode: "cors",
+            headers: {
+                "Content-type": "application/json",
+                "Access-Control_Allow_Origin": "*",
+            }
         });
 
         if(!response.ok){
@@ -18,7 +21,8 @@ export const server_calls = {
         {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control_Allow_Origin": "*",
             },
             body: JSON.stringify(data)
         });
@@ -35,7 +39,8 @@ export const server_calls = {
         {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control_Allow_Origin": "*",
             },
             body: JSON.stringify(data)
         });
@@ -52,7 +57,8 @@ export const server_calls = {
         {
             method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control_Allow_Origin": "*",
             },
 
         });

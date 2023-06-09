@@ -18,7 +18,7 @@ const columns: GridColDef[] = [
 function DataTable() {
     let [ open, setOpen ] = useState(false);
     const { contactData, getData } = useGetData();
-    const [ selectionModel, setSelectionModel ] = useState<any>([])
+    const [ selectionModel, setSelectionModel ] = useState<string[]>([])
     // TODO: write useGetData hook and selection model
 
     const handleOpen = () => {
@@ -30,7 +30,7 @@ function DataTable() {
     }
 
     const deleteData = () => {
-        server_calls.delete(selectionModel)
+        server_calls.delete(selectionModel[0])
         getData();
         console.log(`Selection model: ${selectionModel}`)
         setTimeout( () => {window.location.reload()}, 500)
