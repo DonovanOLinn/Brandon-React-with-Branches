@@ -1,0 +1,8 @@
+So something that has come up during this, is that @mui/x-data-grid has recently gone up in version. Due to this, instead of installing the version
+that Brandon uses, it installs a newer one where the parameters you set up don't exist. 
+
+To fix this, simply do:
+npm uninstall @mui/x-data-grid
+
+Then do:
+npm install @mui/x-data-grid@5.17.24

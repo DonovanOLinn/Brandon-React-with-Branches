@@ -52,6 +52,7 @@ function DataTable() {
             style={{ height: 400, width: '100%'}}
         >
             <h2 className="p-3 bg-slate-300 my-2 rounded">My Contacts</h2>
+            {/* IF THIS BELOW LOOKS WEIRD OR DIFFERENT FROM YOURS, CHECK OUT THE NOTES.TXT */}
             <DataGrid rows={contactData} columns={columns} rowsPerPageOptions={[5]}
             checkboxSelection={true} 
             onSelectionModelChange={ (item:any) => {
