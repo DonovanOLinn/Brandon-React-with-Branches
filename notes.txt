@@ -1,0 +1,2 @@
+Soooooo for everyone out there wondering, the issue that happened at the end of the video was not caused by you. There is a slight bug with the if statement
+Brandon goes over how to fix it in the next video
