@@ -21,7 +21,7 @@ const ContactForm = ( props:ContactFormProps) => {
     console.log(`ID: ${props.id}`);
     if (props.id) {
       server_calls.update(props.id!, data)
-      console.log(`Updated: ${ data } ${ props.id }`)
+      console.log(`Updated: ${ data.name } ${ props.id }`)
       setTimeout(() => {window.location.reload()}, 1000);
       event.target.reset()
     } else {

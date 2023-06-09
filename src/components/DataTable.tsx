@@ -3,6 +3,8 @@ import Button from "./Button"
 import Modal from "./Modal"
 import { server_calls } from '../api/server';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { useGetData } from '../custom-hooks/FetchData';
+
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: "ID", width: 90, hide: true},
@@ -27,12 +29,18 @@ function DataTable() {
         setOpen(false)
     }
 
-    // TODO: add delete function to button
+    const deleteData = () => {
+        server_calls.delete(selectionModel)
+        getData();
+        console.log(`Selection model: ${selectionModel}`)
+        setTimeout( () => {window.location.reload()}, 500)
+    }
 
 
   return (
     <>
         <Modal 
+            id={selectionModel}
             open={open}
             onClose={handleClose}
         />
@@ -45,8 +53,8 @@ function DataTable() {
                     Create New Contact
                 </button>
             </div> 
-            <Button className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Update</Button>
-            <Button className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Delete</Button>
+            <Button onClick={handleOpen} className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Update</Button>
+            <Button onClick={deleteData} className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Delete</Button>
         </div>
         <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"}
             style={{ height: 400, width: '100%'}}
