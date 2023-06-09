@@ -3,6 +3,9 @@ import Button from "./Button"
 import Input from "./Input"
 
 import { useForm } from 'react-hook-form'
+import { server_calls } from "../api/server"
+import { useDispatch, useStore } from "react-redux"
+import { chooseName, chooseEmail, chooseAddress, choosePhone } from "../redux/slices/RootSlice"
 
 interface ContactFormProps {
   id?: string,
@@ -11,9 +14,26 @@ interface ContactFormProps {
 
 const ContactForm = ( props:ContactFormProps) => {
   const { register, handleSubmit } = useForm({})
+  const dispatch = useDispatch()
+  const store = useStore()
 
-  const onSubmit = () => {
-    console.log('pass')
+  const onSubmit = (data: any, event: any) => {
+    console.log(`ID: ${props.id}`);
+    if (props.id) {
+      server_calls.update(props.id!, data)
+      console.log(`Updated: ${ data } ${ props.id }`)
+      setTimeout(() => {window.location.reload()}, 1000);
+      event.target.reset()
+    } else {
+      // Use dispatch to update our state in our store
+      dispatch(chooseName(data.name));
+      dispatch(chooseEmail(data.email));
+      dispatch(choosePhone(data.phone_number));
+      dispatch(chooseAddress(data.address));
+
+      server_calls.create(store.getState())
+      setTimeout( () => {window.location.reload()}, 1000)
+    }
   }
 
   return (
