@@ -1,6 +1,6 @@
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
+        const response = await fetch(`https://phonebook-8by0.onrender.com/api/contacts`,
         {
             method: 'GET',
             mode: "cors",
@@ -14,7 +14,7 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
+        const response = await fetch(`https://phonebook-8by0.onrender.com/api/contacts`,
         {
             method: "POST",
             headers: {
@@ -31,7 +31,7 @@ export const server_calls = {
     },
 
     update: async (id:string, data: any = {}) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts/${id}`,
+        const response = await fetch(`https://phonebook-8by0.onrender.com/api/contacts/${id}`,
         {
             method: "POST",
             headers: {
@@ -48,7 +48,7 @@ export const server_calls = {
     },
 
     delete: async (id:string) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts/${id}`,
+        const response = await fetch(`https://phonebook-8by0.onrender.com/api/contacts/${id}`,
         {
             method: "DELETE",
             headers: {
