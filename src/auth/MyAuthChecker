@@ -1,0 +1,39 @@
+// NOTE 
+// This is my authChecker. Some people over time have stated they didn't like the multiple poppups that happen, 
+// nor the reroute back to the home page. So, I have created this down below. Feel free to give it a try or
+// stick with the original. It is up to you! I thought that I would provide this here if you wanted it
+
+
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, onAuthStateChanged } from 'firebase/auth';
+import { auth, Providers } from '../config/firebase';
+
+interface Props {
+    children: React.ReactNode;
+}
+
+const AuthChecker =({ children }: Props) => {
+    const navigate = useNavigate();
+
+    const signInOnClick = async () => {
+      const response = await signInWithRedirect(auth, Providers.google);
+  }
+    
+  useEffect(() => {
+    const auth_state = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        signInOnClick()
+        navigate('/dashboard');
+        
+      }
+    });
+    return () => auth_state();
+  }, [auth, navigate]);
+
+  return (
+    <>{children}</>
+  )
+}
+
+export default AuthChecker
