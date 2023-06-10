@@ -1,0 +1,2 @@
+I have provided a AuthChecker that I like to use. I have labeled it myAuthChecker. If you want to, you can try it out if you don't like the one that is provided
+Or you can continue to use the one that you made. Or you can make you own!
