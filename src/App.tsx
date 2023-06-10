@@ -9,6 +9,7 @@ import AuthChecker from './auth/AuthChecker'
 // So, if you hosted to Netlify, and you are getting errors pop up whenever you try to add, update, or delete from your dashboard,
 // switch out all of the BrowserRouters on this page to HashRouters. That has fixed the problem. If you manage to find another solution,
 // please reach out and let me know!
+
 function App() {
 
   return (
